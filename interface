@@ -1,0 +1,634 @@
+//******KamiKaze*******
+#include"../../Headers/pch.h"
+// * * * BÝTÝRME BÖLÜMÜ * * *
+//Çerçeve
+
+DWORD a_1_y_ = 0x004DF4B4;
+DWORD a_1_x_ = 0x004DDE20;
+//+ Ýþareti
+DWORD a_2_y_ = 0x004DE68B;
+DWORD a_2_x_ = 0x004DE69B;
+//- Ýþareti
+DWORD a_3_y_ = 0x004DE765;
+DWORD a_3_x_ = 0x004DE775;
+//Harita
+DWORD a_4_y_ = 0x004DE83F;
+DWORD a_4_x_ = 0x004DE84F;
+//Ýþgal
+DWORD a_5_y_ = 0x004DE919;
+DWORD a_5_x_ = 0x004DE92A;
+//Saat button 1
+DWORD a_6_y_ = 0x004DEAE5;
+DWORD a_6_x_ = 0x004DEAF5;
+//Saat button 2
+DWORD a_7_y_ = 0x004DEA0E;
+DWORD a_7_x_ = 0x004DEA1E;
+//Saat
+DWORD a_8_y_ = 0x004DDF1B;
+DWORD a_8_x_ = 0x004DDF08;
+//Oclock background
+DWORD oc_background_ = 0x004DE95F;
+
+//Yeni tanýmlama
+double nw_a_y = 201.0;
+double nw_a_2 = 8.0;
+double nw_a_3 = 26.0;
+double nw_a_4 = 44.0;
+double nw_a_5 = 62.0;
+double nw_a_6 = 80.0;
+double nw_a_8_y = 205.0;
+double nw_a_8_x = 103.0;
+
+// * * * EDÝT BÖLÜMÜ * * *
+//mp1
+__declspec(dllexport) __declspec(naked) void a_1_y()
+{
+
+	_asm
+	{
+		mov[esi + 0x10], 0x000000E2
+		jmp a_1_y_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a_1_x()
+{
+
+	_asm
+	{
+		mov[ecx - 0x20], 0x000000CA
+		jmp a_1_x_
+	}
+}
+//mp2
+__declspec(dllexport) __declspec(naked) void a_2_y()
+{
+
+	_asm
+	{
+		fld nw_a_y
+		jmp a_2_y_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a_2_x()
+{
+
+	_asm
+	{
+		fld nw_a_2
+		jmp a_2_x_
+	}
+}
+//mp3
+__declspec(dllexport) __declspec(naked) void a_3_y()
+{
+
+	_asm
+	{
+		fld nw_a_y
+		jmp a_3_y_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a_3_x()
+{
+
+	_asm
+	{
+		fld nw_a_3
+		jmp a_3_x_
+	}
+}
+//mp4
+__declspec(dllexport) __declspec(naked) void a_4_y()
+{
+
+	_asm
+	{
+		fld nw_a_y
+		jmp a_4_y_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a_4_x()
+{
+
+	_asm
+	{
+		fld nw_a_4
+		jmp a_4_x_
+	}
+}
+//mp5
+__declspec(dllexport) __declspec(naked) void a_5_y()
+{
+
+	_asm
+	{
+		fld nw_a_y
+		jmp a_5_y_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a_5_x()
+{
+
+	_asm
+	{
+		fld nw_a_5
+		jmp a_5_x_
+	}
+}
+//mp6
+__declspec(dllexport) __declspec(naked) void a_6_y()
+{
+
+	_asm
+	{
+		fld nw_a_y
+		jmp a_6_y_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a_6_x()
+{
+
+	_asm
+	{
+		fld nw_a_6
+		jmp a_6_x_
+	}
+}
+//mp7
+__declspec(dllexport) __declspec(naked) void a_7_y()
+{
+
+	_asm
+	{
+		fld nw_a_y
+		jmp a_7_y_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a_7_x()
+{
+
+	_asm
+	{
+		fld nw_a_6
+		jmp a_7_x_
+	}
+}
+//mp8
+__declspec(dllexport) __declspec(naked) void a_8_y()
+{
+
+	_asm
+	{
+		fld nw_a_8_y
+		jmp a_8_y_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a_8_x()
+{
+
+	_asm
+	{
+		fld nw_a_8_x
+		jmp a_8_x_
+	}
+}
+//OCLOCK Background
+__declspec(dllexport) __declspec(naked) void oc_background()
+{
+
+	_asm
+	{
+		NOP
+		jmp oc_background_
+	}
+}
+//b Y 1
+DWORD b_y_1_ = 0x004E04D3;
+double nw_b_y_1 = 0.29265625;//Geniþlik
+__declspec(dllexport) __declspec(naked) void b_y_1()
+{
+
+	_asm
+	{
+		fmul qword ptr nw_b_y_1
+		jmp b_y_1_
+	}
+}
+//b Y 2
+DWORD b_y_2_ = 0x004E04FB;
+double nw_b_y_2 = 0.20734375;//Geniþlik
+__declspec(dllexport) __declspec(naked) void b_y_2()
+{
+
+	_asm
+	{
+		fmul qword ptr nw_b_y_2
+		jmp b_y_2_
+	}
+}
+//b X 1
+DWORD b_x_1_ = 0x004E0515;
+double nw_b_x_1 = 0.30328125;//Geniþlik
+__declspec(dllexport) __declspec(naked) void b_x_1()
+{
+
+	_asm
+	{
+		fmul qword ptr nw_b_x_1
+		jmp b_x_1_
+	}
+}
+//b X 2
+DWORD b_x_2_ = 0x004E0537;
+double nw_b_x_2 = 0.19671875;//Geniþlik
+__declspec(dllexport) __declspec(naked) void b_x_2()
+{
+
+	_asm
+	{
+		fmul qword ptr nw_b_x_2
+		jmp b_x_2_
+	}
+}
+//Arrow
+DWORD arrow_ = 0x004E0694;
+__declspec(dllexport) __declspec(naked) void arrow()
+{
+	_asm
+	{
+		add eax, 0x6A //4E (78) to 69
+		fld dword ptr[esp + 0x4C]
+		add ecx, 0x65 // 46 to 64
+		jmp arrow_
+	}
+}
+//Sunak
+double nw_sunak = 80;//Çap (etki alaný)
+DWORD sunak_ = 0x004E07AF;
+float sunak1_ = 16.00;
+DWORD sunak2_ = 0x00631BE0;// CALL ALL ******
+DWORD sunak3_ = 0x004E080B;
+__declspec(dllexport) __declspec(naked) void sunak()
+{
+	_asm
+	{
+		fcomp qword ptr[nw_sunak]
+		fnstsw ax
+		test ah, 0x05
+		jp deneme
+		mov ecx, [esi + 0x04]
+		add ecx, 0x64 // X
+		mov[esp + 0x10], ecx
+		fild dword ptr[esp + 0x10]
+		fadd dword ptr[esp + 0x20]
+		fld sunak1_
+		fsub st(0x1), st(0x0)
+		fxch st(0x1)
+		call sunak2_
+		mov edx, [esi + 0x08]
+		add edx, 0x69 // Y
+		jmp sunak_
+		deneme:
+		jmp sunak3_
+	}
+}
+//Görevler start ve end
+double nw_quests = 90;//Çap (etki alaný) ******
+DWORD quests_ = 0x004E099D;
+DWORD quests1_ = 0x004E09C2;
+float quests2_ = 8.00;// CALL ALL ******
+DWORD quests3_ = 0x004E09B6;
+__declspec(dllexport) __declspec(naked) void quests()
+{
+	_asm
+	{
+		fcomp qword ptr[nw_quests]
+		fnstsw ax
+		test ah, 0x05
+		jp deneme1
+		cmp byte ptr[edi + 0x08], 0x00
+		jne deneme2
+		mov eax, [esi + 0x08]
+		// Bitmiþ görevler
+		add eax, 0x69 // Y
+		mov[esp + 0x10], eax
+		fild dword ptr[esp + 0x10]
+		fsub dword ptr[esp + 0x24]
+		fld quests2_
+		fsub st(0x1), st(0x0)
+		fxch st(0x1)
+		call sunak2_
+		mov ecx, [esi + 0x04]
+		add ecx, 0x64 // X
+		mov[esp + 0x10], ecx
+		fild dword ptr[esp + 0x10]
+		push eax
+		fadd dword ptr[esp + 0x24]
+		fsubrp st(0x1), st(0x0)
+		call sunak2_
+		lea ecx, [esi + 0x0000009C]
+		jmp quests3_
+		deneme2:
+		mov edx, [esi + 0x08]
+		// Yeni Görevler
+		add edx, 0x69 // Y
+		mov[esp + 0x10], edx
+		fild dword ptr[esp + 0x10]
+		fsub dword ptr[esp + 0x24]
+		fld quests2_
+		fsub st(0x1), st(0x0)
+		fxch st(0x1)
+		call sunak2_
+		push eax
+		mov eax, [esi + 0x04]
+		add eax, 0x64 // X
+		JMP quests_
+		deneme1:
+		JMP quests1_
+	}
+}
+//Parti 1
+DWORD parti1_ = 0x004E0AC9;
+DWORD parti11_ = 0x004E0ADA;
+__declspec(dllexport) __declspec(naked) void parti1()
+{
+	_asm
+	{
+		fcomp qword ptr[nw_quests]
+		fnstsw ax
+		test ah, 0x05
+		jp parti_jmp
+		mov edx, [esi + 0x08]
+		add edx, 0x69 // Y
+		mov[esp + 0x10], edx
+		fild dword ptr[esp + 0x10]
+		fsub dword ptr[esp + 0x1C]
+		fld quests2_
+		fsub st(0x1), st(0x0)
+		fxch st(0x1)
+		call sunak2_
+		push eax
+		mov eax, [esi + 0x04]
+		add eax, 0x64 // X
+		JMP parti1_
+		parti_jmp:
+		JMP parti11_
+	}
+}
+//Parti 2
+DWORD parti2_ = 0x004E0B6A;
+double nw_parti21 = 76;//Çap (etki alaný)
+double nw_parti22 = -76;//Çap (etki alaný)
+double nw_parti23 = 88;//Çap (etki alaný)
+double nw_parti24 = -88;//Çap (etki alaný)
+__declspec(dllexport) __declspec(naked) void parti2()
+{
+	_asm
+	{
+		fld nw_parti21
+		fmul st(0x0), st(0x1)
+		fstp dword ptr[esp + 0x20]
+		fld dword ptr[esp + 0x1C]
+		fld nw_parti22
+		fmul st(0x0), st(0x1)
+		fstp dword ptr[esp + 0x24]
+		fxch st(0x1)
+		fmul nw_parti23
+		fstp dword ptr[esp + 0x18]
+		fmul nw_parti24
+		JMP parti2_
+	}
+}
+//Parti 3
+DWORD parti3_ = 0x004E0C6C;
+DWORD parti31_ = 0x0057BAF0;
+__declspec(dllexport) __declspec(naked) void parti3()
+{
+	_asm
+	{
+		add eax, 0x69 // Y
+		fstp dword ptr[esp + 0x1C]
+		mov[esp + 0x30], eax
+		fld dword ptr[esp + 0x74]
+		fstp dword ptr[esp + 0x18]
+		fld dword ptr[esp + 0x60]
+		fstp dword ptr[esp + 0x14]
+		fld dword ptr[esp + 0x70]
+		fstp dword ptr[esp + 0x10]
+		fld dword ptr[esp + 0x5C]
+		fstp dword ptr[esp + 0x0C]
+		fld dword ptr[esp + 0x6C]
+		fstp dword ptr[esp + 0x08]
+		fld dword ptr[esp + 0x58]
+		fstp dword ptr[esp + 0x04]
+		fld dword ptr[esp + 0x68]
+		fstp dword ptr[esp]
+		fild dword ptr[esp + 0x30]
+		fadd dword ptr[esp + 0x3C]
+		call sunak2_
+		mov ecx, [esi + 0x04]
+		add ecx, 0x64 // X
+		mov[esp + 0x30], ecx
+		fild dword ptr[esp + 0x30]
+		push eax
+		fadd dword ptr[esp + 0x3C]
+		call sunak2_
+		push eax
+		lea ecx, [esi + 0x6C]
+		call parti31_
+		mov edx, [esi + 0x08]
+		add edx, 0x69 // Y
+		mov[esp + 0x10], edx
+		fild dword ptr[esp + 0x10]
+		fadd dword ptr[esp + 0x24]
+		fld quests2_
+		fsub st(0x1), st(0x0)
+		fxch st(0x1)
+		call sunak2_
+		push eax
+		mov eax, [esi + 0x04]
+		add eax, 0x64 // X
+		JMP parti3_
+	}
+}
+// Raid party 1
+DWORD raidparty1_ = 0x004E0DBF;
+DWORD raidparty11_ = 0x004E0DD0;
+__declspec(dllexport) __declspec(naked) void raidparty1()
+{
+	_asm
+	{
+		fcomp qword ptr[nw_quests]
+		fnstsw ax
+		test ah, 0x05
+		jp raidparty1_jump
+		mov edx, [esi + 0x08]
+		add edx, 0x69 // Y
+		mov[esp + 0x10], edx
+		fild dword ptr[esp + 0x10]
+		fsub dword ptr[esp + 0x24]
+		fld quests2_
+		fsub st(0x1), st(0x0)
+		fxch st(0x1)
+		call sunak2_
+		push eax
+		mov eax, [esi + 0x04]
+		add eax, 0x64 // X
+		JMP raidparty1_
+		raidparty1_jump:
+		JMP raidparty11_
+	}
+}
+// Raid party 2
+DWORD raidparty2_ = 0x004E0E60;
+__declspec(dllexport) __declspec(naked) void raidparty2()
+{
+	_asm
+	{
+		fld nw_parti21
+		fmul st(0x0), st(0x1)
+		fstp dword ptr[esp + 0x38]
+		fld dword ptr[esp + 0x24]
+		fld nw_parti22
+		fmul st(0x0), st(0x1)
+		fstp dword ptr[esp + 0x3C]
+		fxch st(0x1)
+		fmul nw_parti23
+		fstp dword ptr[esp + 0x20]
+		fmul nw_parti24
+		JMP raidparty2_
+	}
+}
+// Raid party 3
+DWORD raidparty3_ = 0x004E0F68;
+__declspec(dllexport) __declspec(naked) void raidparty3()
+{
+	_asm
+	{
+		add eax, 0x69 // Y
+		fstp dword ptr[esp + 0x1C]
+		mov[esp + 0x50], eax
+		fld dword ptr[esp + 0x00000084]
+		fstp dword ptr[esp + 0x18]
+		fld dword ptr[esp + 0x70]
+		fstp dword ptr[esp + 0x14]
+		fld dword ptr[esp + 0x00000080]
+		fstp dword ptr[esp + 0x10]
+		fld dword ptr[esp + 0x6C]
+		fstp dword ptr[esp + 0x0C]
+		fld dword ptr[esp + 0x7C]
+		fstp dword ptr[esp + 0x08]
+		fld dword ptr[esp + 0x68]
+		fstp dword ptr[esp + 0x04]
+		fld dword ptr[esp + 0x78]
+		fstp dword ptr[esp]
+		fild dword ptr[esp + 0x50]
+		fadd dword ptr[esp + 0x44]
+		call sunak2_
+		mov ecx, [esi + 0x04]
+		add ecx, 0x64 // X
+		mov[esp + 0x50], ecx
+		fild dword ptr[esp + 0x50]
+		push eax
+		fadd dword ptr[esp + 0x44]
+		call sunak2_
+		push eax
+		lea ecx, [esi + 0x6C]
+		call parti31_
+		mov edx, [esi + 0x08]
+		add edx, 0x69 // Y
+		mov[esp + 0x30], edx
+		fild dword ptr[esp + 0x30]
+		fadd dword ptr[esp + 0x3C]
+		fld quests2_
+		fsub st(0x1), st(0x0)
+		fxch st(0x1)
+		call sunak2_
+		push eax
+		mov eax, [esi + 0x04]
+		add eax, 0x64 // X
+		JMP raidparty3_
+	}
+}
+//Görev end çap ve kapsama alaný
+DWORD quests_end_ = 0x004E10AE;
+double nw_quests_end = 89;//Çap (etki alaný)
+DWORD quests_end_1 = 0x004E10D4;
+DWORD quests_end_2 = 0x006584C4;
+DWORD quests_end_3 = 0x004E10CE;
+double nw_quests_end1 = -90;//Çap (etki alaný)
+__declspec(dllexport) __declspec(naked) void quests_end()
+{
+	_asm
+	{
+		fcomp nw_quests_end
+		fnstsw ax
+		test ah, 0x41
+		jne quests_end_jump1
+		lea edx, [esp + 0x20]
+		push edx
+		mov eax, edx
+		push eax
+		call quests_end_2
+		fld dword ptr[esp + 0x20]
+		fmul nw_quests
+		fstp dword ptr[esp + 0x20]
+		fld dword ptr[esp + 0x24]
+		fmul nw_quests_end1
+		fstp dword ptr[esp + 0x24]
+		cmp byte ptr[edi + 0x08], 0x00
+		jne quests_end_jump2
+		mov ecx, [esi + 0x08]
+		add ecx, 0x6A // Y
+		mov[esp + 0x18], ecx
+		fild dword ptr[esp + 0x18]
+		fadd dword ptr[esp + 0x24]
+		fld quests2_
+		fsub st(0x1), st(0x0)
+		fxch st(0x1)
+		call sunak2_
+		mov edx, [esi + 0x04]
+		add edx, 0x65 // X
+		JMP quests_end_
+		quests_end_jump1:
+		JMP quests_end_1
+		quests_end_jump2:
+		JMP quests_end_3
+	}
+}
+
+// * * * BAÞLANGIÇ BÖLÜMÜ * * *
+void minimap()
+{
+		Hook((void*)0x004DF4AD, a_1_y, 5);
+		Hook((void*)0x004DDE19, a_1_x, 5);
+		Hook((void*)0x004DE685, a_2_y, 5);
+		Hook((void*)0x004DE695, a_2_x, 5);
+		Hook((void*)0x004DE75F, a_3_y, 5);
+		Hook((void*)0x004DE76F, a_3_x, 5);
+		Hook((void*)0x004DE839, a_4_y, 5);
+		Hook((void*)0x004DE849, a_4_x, 5);
+		Hook((void*)0x004DE913, a_5_y, 5);
+		Hook((void*)0x004DE924, a_5_x, 5);
+		Hook((void*)0x004DEADF, a_6_y, 5);
+		Hook((void*)0x004DEAEF, a_6_x, 5);
+		Hook((void*)0x004DEA08, a_7_y, 5);
+		Hook((void*)0x004DEA18, a_7_x, 5);
+		Hook((void*)0x004DDF15, a_8_y, 5);
+		Hook((void*)0x004DDF02, a_8_x, 5);
+		Hook((void*)0x004DE943, oc_background, 5);
+		Hook((void*)0x004E04CD, b_y_1, 6);
+		Hook((void*)0x004E04F5, b_y_2, 6);
+		Hook((void*)0x004E050F, b_x_1, 6);
+		Hook((void*)0x004E0531, b_x_2, 6);
+		Hook((void*)0x004E068A, arrow, 5);
+		Hook((void*)0x004E0777, sunak, 6);
+		Hook((void*)0x004E091B, quests, 6);
+		Hook((void*)0x004E0A94, parti1, 6);
+		Hook((void*)0x004E0B3C, parti2, 6);
+		Hook((void*)0x004E0BD4, parti3, 7);
+		Hook((void*)0x004E0D8A, raidparty1, 6);
+		Hook((void*)0x004E0E32, raidparty2, 6);
+		Hook((void*)0x004E0ECA, raidparty3, 7);
+		Hook((void*)0x004E104B, quests_end, 6);
+}
