@@ -3,7 +3,7 @@
 #include <cstring>
 #include <string.h>
 using namespace std;
-DWORD char_class = game + 0x00513473;//Karakter klas check
+DWORD char_class = 0x00913473;//Karakter klas check
 int* char_class_1 = reinterpret_cast<int*>(char_class);
 
 const char* cc;
