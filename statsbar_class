@@ -1,0 +1,61 @@
+//******KamiKaze*******
+#include"../../Headers/pch.h"
+#include <cstring>
+#include <string.h>
+using namespace std;
+DWORD char_class = game + 0x00513473;//Karakter klas check
+int* char_class_1 = reinterpret_cast<int*>(char_class);
+
+const char* cc;
+
+int mc() {
+	if (*char_class_1 == 0)
+	{
+		cc = "stats_bar_sav.tga";
+	}
+	else if (*char_class_1 == 1)
+	{
+		cc = "stats_bar_nob.tga";
+	}
+	else if (*char_class_1 == 2)
+	{
+		cc = "stats_bar_sui.tga";
+	}
+	else if (*char_class_1 == 3)
+	{
+		cc = "stats_bar_avc.tga";
+	}
+	else if (*char_class_1 == 4)
+	{
+		cc = "stats_bar_pag.tga";
+	}
+	else if (*char_class_1 == 5)
+	{
+		cc = "stats_bar_kah.tga";
+	}
+}
+// * * * BÝTÝRME BÖLÜMÜ * * *
+//Karakter
+DWORD ac_ = 0x0053203B;
+
+//Yeni ip tanýmlama
+
+
+__declspec(dllexport) __declspec(naked) void ac()
+{
+
+
+	_asm
+	{
+		call mc
+		mov eax, cc
+		push eax
+		jmp ac_
+	}
+}
+// * * * BAÞLANGIÇ BÖLÜMÜ * * *
+void stats_bar_class()
+{
+	Hook((void*)0x00532036, ac, 5);
+
+}
