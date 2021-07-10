@@ -33,6 +33,7 @@ int mc() {
 	{
 		cc = "stats_bar_kah.tga";
 	}
+	return 0;
 }
 // * * * BÝTÝRME BÖLÜMÜ * * *
 //Karakter
