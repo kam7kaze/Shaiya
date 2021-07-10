@@ -1,0 +1,365 @@
+//******KamiKaze*******
+#include"../../Headers/pch.h"
+// * * * BÝTÝRME BÖLÜMÜ * * *
+//HP
+DWORD a1_wid_ = 0x0053234B;//Geniþlik
+DWORD a1_sy_ = 0x005323E0;//Gölge Y
+DWORD a1_sx_ = 0x005323EF;//Gölge X
+DWORD a1_y_ = 0x0053242B;//Y
+DWORD a1_x_ = 0x0053243A;//X
+DWORD a1_stck_ = 0x005323D1;//Gölge Kalýnlýk
+DWORD a1_tck_ = 0x00532424;//Kalýnlýk
+//MP
+DWORD a2_wid_ = 0x00532487;//Geniþlik
+DWORD a2_sy_ = 0x0053251F;//Gölge Y
+DWORD a2_sx_ = 0x0053252E;//Gölge X
+//DWORD a2_y_ = 0x00532570;//Y
+DWORD a2_x_ = 0x0053257F;//X
+DWORD a2_stck_ = 0x00532515;//Gölge Kalýnlýk
+DWORD a2_stck_call = 0x00631BE0;//Gölge Kalýnlýk Call
+DWORD a2_tck_ = 0x00532570;//Kalýnlýk
+//DP
+DWORD a3_wid_ = 0x005325CC;//Geniþlik
+DWORD a3_sy_ = 0x00532664;//Gölge Y
+DWORD a3_sx_ = 0x00532673;//Gölge X
+//DWORD a3_y_ = 0x005326B5;//Y
+DWORD a3_x_ = 0x005326C4;//X
+DWORD a3_stck_ = 0x0053265A;//Gölge Kalýnlýk
+DWORD a3_stck_call = 0x00631BE0;//Gölge Kalýnlýk
+DWORD a3_tck_ = 0x005326B5;//Kalýnlýk
+//KALANLAR
+DWORD adel1_ = 0x005327EE;//hp mp dp silme
+DWORD adel2_ = 0x005328A4;//Lv. silme
+DWORD alvly_ = 0x0053287C;//Level Y
+DWORD alvlx_ = 0x0053286B;//Level X
+DWORD ancky_ = 0x005322E5;//nick Y
+DWORD anckx_ = 0x005322FB;//nick X
+// * * * New Value * * *
+double nw_a1_wid = 152.0;//Geniþlik
+float nw_a1_y = 23.0;//HP Y
+float nw_a2_y = 36.0;//MP Y
+float nw_a3_y = 49.0;//DP Y
+float nw_a1_x = 61.0;//HP X
+DWORD nw_ak1 = 0x0B;//Kalýnlýk1
+
+float nw_alvly = 31.0;//level y
+float nw_alvlx = 14.0;//level x
+double nw_ancky = -1.0;//nick y
+double nw_anckx = 85.0;//nick x
+// * * * EDÝT BÖLÜMÜ * * *
+//--------------------------------------------------------------HP--------------------------------------------------------------
+__declspec(dllexport) __declspec(naked) void a1_wid()//Full hp belirleme
+{
+	_asm
+	{
+		fmul qword ptr nw_a1_wid
+		jmp a1_wid_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a1_sy()//Gölge Y
+{
+	_asm
+	{
+		fadd dword ptr[nw_a1_y]
+		jmp a1_sy_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a1_sx()//Gölge X
+{
+	_asm
+	{
+		fadd dword ptr[nw_a1_x]
+		jmp a1_sx_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a1_y()//Y
+{
+	_asm
+	{
+		fadd dword ptr[nw_a1_y]
+		jmp a1_y_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a1_x()//X
+{
+	_asm
+	{
+		fadd dword ptr[nw_a1_x]
+		jmp a1_x_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a1_stck()//Gölge Kalýnlýk
+{
+	_asm
+	{
+		push nw_ak1
+		fld dword ptr[esi + 0x00000080]
+		jmp a1_stck_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a1_tck()//Kalýnlýk
+{
+	_asm
+	{
+		push nw_ak1
+		fild dword ptr[esi + 0x08]
+		jmp a1_tck_
+	}
+}
+//--------------------------------------------------------------MP--------------------------------------------------------------
+__declspec(dllexport) __declspec(naked) void a2_wid()//Full mp
+{
+	_asm
+	{
+		fmul qword ptr nw_a1_wid
+		jmp a2_wid_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a2_sy()//Gölge Y
+{
+	_asm
+	{
+		fadd dword ptr[nw_a2_y]
+		jmp a2_sy_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a2_sx()//Gölge X
+{
+	_asm
+	{
+		fadd dword ptr[nw_a1_x]
+		jmp a2_sx_
+	}
+}
+/*__declspec(dllexport) __declspec(naked) void a2_y()//Y
+{
+	_asm
+	{
+		fadd dword ptr[nw_a2_y]
+		jmp a2_y_
+	}
+}*/
+__declspec(dllexport) __declspec(naked) void a2_x()//X
+{
+	_asm
+	{
+		fadd dword ptr[nw_a1_x]
+		jmp a2_x_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a2_stck()//Gölge Kalýnlýk
+{
+	_asm
+	{
+		push nw_ak1
+		call a2_stck_call
+		jmp a2_stck_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a2_tck()//Kalýnlýk
+{
+	_asm
+	{
+		push nw_ak1
+		push ebx
+		fadd dword ptr[nw_a2_y]
+		jmp a2_tck_
+	}
+}
+//--------------------------------------------------------------DP--------------------------------------------------------------
+__declspec(dllexport) __declspec(naked) void a3_wid()//Full dp
+{
+	_asm
+	{
+		fmul qword ptr nw_a1_wid
+		jmp a3_wid_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a3_sy()//Gölge Y
+{
+	_asm
+	{
+		fadd dword ptr[nw_a3_y]
+		jmp a3_sy_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a3_sx()//Gölge X
+{
+	_asm
+	{
+		fadd dword ptr[nw_a1_x]
+		jmp a3_sx_
+	}
+}
+/*__declspec(dllexport) __declspec(naked) void a3_y()//Y
+{
+	_asm
+	{
+		fadd dword ptr[nw_a3_y]
+		jmp a3_y_
+	}
+}*/
+__declspec(dllexport) __declspec(naked) void a3_x()//X
+{
+	_asm
+	{
+		fadd dword ptr[nw_a1_x]
+		jmp a3_x_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a3_stck()//Gölge Kalýnlýk
+{
+	_asm
+	{
+		push nw_ak1
+		call a3_stck_call
+		jmp a3_stck_
+	}
+}
+__declspec(dllexport) __declspec(naked) void a3_tck()//Kalýnlýk
+{
+	_asm
+	{
+		push nw_ak1
+		push ebx
+		fadd dword ptr[nw_a3_y]
+		jmp a3_tck_
+	}
+}
+//KALANLAR
+__declspec(dllexport) __declspec(naked) void adel1()//hp mp dp silme
+{
+	_asm
+	{
+		nop
+		jmp adel1_
+	}
+}
+__declspec(dllexport) __declspec(naked) void adel2()//Lv. silme
+{
+	_asm
+	{
+		push 0x00752DBF
+		jmp adel2_
+	}
+}
+__declspec(dllexport) __declspec(naked) void alvly()//level y
+{
+	_asm
+	{
+		fsub dword ptr[nw_alvly]
+		jmp alvly_
+	}
+}
+__declspec(dllexport) __declspec(naked) void alvlx()//level x
+{
+	_asm
+	{
+		fadd dword ptr[nw_alvlx]
+		jmp alvlx_
+	}
+}
+__declspec(dllexport) __declspec(naked) void ancky()//nick y
+{
+	_asm
+	{
+		fld nw_ancky
+		jmp ancky_
+	}
+}
+__declspec(dllexport) __declspec(naked) void anckx()//nick x
+{
+	_asm
+	{
+		fld nw_anckx
+		jmp anckx_
+	}
+}
+// hp mp dp yazýlar
+DWORD asyaz_ = 0x0053270D;//HP
+DWORD asyaz__ = 0x00631BE0;
+DWORD bsyaz_ = 0x00532772;//MP
+DWORD csyaz_ = 0x005327CD;//DP
+float nasyaz_ = 78.0;//X
+float nasyaz__ = 25.0;//Y
+float nbsyaz__ = 38.0;//Y
+float ncsyaz__ = 51.0;//Y
+//HP
+__declspec(dllexport) __declspec(naked) void asyaz()
+{
+	_asm
+	{
+		fld nasyaz_
+		fiadd[esi + 0x04]
+		add esp, 0x10
+		call asyaz__
+		fld nasyaz__
+		jmp asyaz_
+	}
+}
+//MP
+__declspec(dllexport) __declspec(naked) void bsyaz()
+{
+	_asm
+	{
+		fld nasyaz_
+		fiadd[esi + 0x04]
+		add esp, 0x10
+		call asyaz__
+		fld nbsyaz__
+		jmp bsyaz_
+	}
+}
+//DP
+__declspec(dllexport) __declspec(naked) void csyaz()
+{
+	_asm
+	{
+		fld nasyaz_
+		fiadd[esi + 0x04]
+		add esp, 0x10
+		call asyaz__
+		fld ncsyaz__
+		jmp csyaz_
+	}
+}
+
+// * * * BAÞLANGIÇ BÖLÜMÜ * * *
+//main function
+void stats_bar()
+{
+	Hook((void*)0x00532345, a1_wid, 6);//Full hp (geniþlik)
+	Hook((void*)0x005323DA, a1_sy, 6);//Gölge Y
+	Hook((void*)0x005323E9, a1_sx, 6);//Gölge X
+	Hook((void*)0x00532425, a1_y, 6);//Y
+	Hook((void*)0x00532434, a1_x, 6);//X
+	Hook((void*)0x005323C9, a1_stck, 8);//Gölge Kalýnlýk
+	Hook((void*)0x0053241F, a1_tck, 5);//Kalýnlýk
+	//MP
+	Hook((void*)0x00532481, a2_wid, 6);//Full mp (geniþlik)
+	Hook((void*)0x00532519, a2_sy, 6);//Gölge Y
+	Hook((void*)0x00532528, a2_sx, 6);//Gölge X
+	/*Hook((void*)0x0053256A, a2_y, 6);-*///Y
+	Hook((void*)0x00532579, a2_x, 6);//X
+	Hook((void*)0x0053250E, a2_stck, 7);//Gölge Kalýnlýk
+	Hook((void*)0x00532567, a2_tck, 9);//Kalýnlýk
+	//DP
+	Hook((void*)0x005325C6, a3_wid, 6);//Full mp (geniþlik)
+	Hook((void*)0x0053265E, a3_sy, 6);//Gölge Y
+	Hook((void*)0x0053266D, a3_sx, 6);//Gölge X
+	/*Hook((void*)0x005326AF, a3_y, 6);*///Y
+	Hook((void*)0x005326BE, a3_x, 6);//X
+	Hook((void*)0x00532653, a3_stck, 7);//Gölge Kalýnlýk
+	Hook((void*)0x005326AC, a3_tck, 9);//Kalýnlýk
+	//KALANLAR
+	//Hook((void*)0x005326D3, adel1, 5);//hp mp dp yazýlarý silme
+	Hook((void*)0x0053289F, adel2, 5);//Lv. yazýsýný silme
+	Hook((void*)0x00532876, alvly, 6);//Seviye Y
+	Hook((void*)0x00532865, alvlx, 5);//Seviye X
+	Hook((void*)0x005322DF, ancky, 5);//nick Y
+	Hook((void*)0x005322F5, anckx, 5);//nick X
+	// HP MP DP yazýlar
+	Hook((void*)0x005326F6, asyaz, 6);//nick Y
+	Hook((void*)0x0053275B, bsyaz, 6);//nick Y
+	Hook((void*)0x005327B6, csyaz, 6);//nick Y
+}
